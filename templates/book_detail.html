@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Детальная страница книги №{{ book_id }}</title>
     <style>
         table, th, td {
             border: 1px solid black;
@@ -43,7 +43,7 @@
         {% else %}
         <tr>
             <td colspan="5">
-            <p align="center">Книга по запросу не найдена</p>
+            <p align="center">Книга по ID {{ book_id }} не найдена</p>
             </td>
         </tr>
         {% endif %}
