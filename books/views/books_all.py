@@ -4,7 +4,7 @@ from books.models import Book
     
 
 def books_view(request: HttpRequest) -> HttpResponse:
-    title = 'Спиок всех книг'
+    title = 'Спиcок всех книг'
     books = Book.objects.all()
     return render(request, 'books.html', context={'title': title, 'books': books})
 

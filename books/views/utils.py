@@ -1,9 +1,6 @@
-from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import get_object_or_404
 from books.models import Book
 
 
 def get_book(book_id: int) -> Book | None:
-    try:
-        return Book.objects.get(id=book_id)
-    except ObjectDoesNotExist:
-        return None
+    return get_object_or_404(Book, pk=book_id)
