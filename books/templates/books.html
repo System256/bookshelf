@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        td, th {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }} ({{ books|length }})</h1>
+    <table>
+        <tr>
+            <th>title</th>
+            <th>author_full_name</th>
+            <th>year_of_publishing</th>
+            <th>copies_printed</th>
+            <th>short_description</th>
+        </tr>
+        {% if books %}
+            {% for book in books %}
+                <tr>
+                    <td>
+                        {{ book.title }}
+                    </td>
+                    <td>
+                        {{ book.author_full_name }}
+                    </td>
+                    <td>
+                        {{ book.year_of_publishing }}
+                    </td>
+                    <td>
+                        {{ book.copies_printed }}
+                    </td>
+                    <td>
+                        {{ book.short_description }}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+                <p>Список книг пуст</p>
+        {% endif %}
+    </table>
+</body>
+</html>
